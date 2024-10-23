@@ -11,6 +11,8 @@
       "@features/home": ["features/home/index.ts"],
       "@features/search": ["features/search/index.ts"],
       "@shared/components": ["shared/components/index.ts"],
+      "@shared/translations": ["shared/translations/index.ts"],
+      "@lib/i18n": ["lib/i18n/index.ts"],
     }
   }
 }
