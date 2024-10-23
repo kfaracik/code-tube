@@ -1,6 +1,15 @@
 {
   "extends": "expo/tsconfig.base",
   "compilerOptions": {
-    "strict": true
+    "strict": true,
+    "baseUrl": "./src",
+    "paths": {
+      "@navigation/app-content": ["navigation/app-content/index.ts"],
+      "@navigation/constants": ["navigation/constants/index.ts"],
+      "@navigation/types": ["navigation/types/index.ts"],
+      "@features/auth": ["features/auth/index.ts"],
+      "@features/home": ["features/home/index.ts"],
+      "@features/search": ["features/search/index.ts"],
+    }
   }
 }
