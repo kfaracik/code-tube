@@ -12,6 +12,7 @@
     "@react-navigation/bottom-tabs": "^6.6.1",
     "@react-navigation/native-stack": "^6.11.0",
     "expo": "~51.0.28",
+    "expo-dev-client": "~4.0.28",
     "expo-status-bar": "~1.12.1",
     "i18next": "^23.16.2",
     "i18next-browser-languagedetector": "^8.0.0",

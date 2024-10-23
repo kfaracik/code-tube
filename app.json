@@ -23,6 +23,16 @@
     },
     "web": {
       "favicon": "./assets/images/favicon.png"
+    },
+    "build": {
+      "development": {
+        "developmentClient": true,
+        "distribution": "internal"
+      },
+      "preview": {
+        "distribution": "internal"
+      },
+      "production": {}
     }
   }
 }
