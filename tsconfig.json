@@ -10,6 +10,7 @@
       "@features/auth": ["features/auth/index.ts"],
       "@features/home": ["features/home/index.ts"],
       "@features/search": ["features/search/index.ts"],
+      "@shared/components": ["shared/components/index.ts"],
     }
   }
 }
