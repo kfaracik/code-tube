@@ -3,17 +3,21 @@ import { StyleSheet, View, Image, Linking } from "react-native";
 import { useTranslation } from "react-i18next";
 import { Text } from "react-native-paper";
 import { Button, Link, ScreenContainer } from "@shared/components";
-import { links } from "@shared/constants";
 import appImage from "@shared/assets/images/app-icon/app-icon.webp";
+import { links } from "@shared/constants";
+import { useAuthStatus } from "@shared/hooks";
 
 export const SignInScreen = () => {
   const { t } = useTranslation();
+  const { login } = useAuthStatus();
 
-  const onLogInAsGuestPress = () => {};
+  const onLogInAsGuestPress = () => {
+    login();
+  };
 
   const onOpenLink = (link: string) => {
     Linking.openURL(link).catch((err) =>
-      console.error("Couldn't load page", err)
+      alert("Couldn't load page")
     );
   };
 
