@@ -13,8 +13,10 @@
       "@shared/components": ["shared/components/index.ts"],
       "@shared/translations": ["shared/translations/index.ts"],
       "@shared/constants": ["shared/constants/index.ts"],
+      "@shared/hooks": ["shared/hooks/index.ts"],
       "@shared/assets/*": ["shared/assets/*"],
       "@lib/i18n": ["lib/i18n/index.ts"],
+      "@lib/zustand": ["lib/zustand/index.ts"],
     }
   }
 }
