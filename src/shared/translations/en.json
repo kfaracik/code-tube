@@ -8,5 +8,9 @@
         "termsAndConditionsLink": "Terms and Conditions",
         "termsAndConditionsConjunction": " and ",
         "privacyPolicyLink": "Privacy Policy"
+    },
+    "bottomBar": {
+        "home": "Home",
+        "search": "Search"
     }
 }
