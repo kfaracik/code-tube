@@ -3,6 +3,10 @@
         "title": "YouTube",
         "subtitle": "LEARN",
         "description": "Welcome to the best YouTube-based learning application.",
-        "button": "Log in as guest"
+        "button": "Log in as guest",
+        "termsAndConditionsPrefix": "By continuing you agree with ",
+        "termsAndConditionsLink": "Terms and Conditions",
+        "termsAndConditionsConjunction": " and ",
+        "privacyPolicyLink": "Privacy Policy"
     }
 }

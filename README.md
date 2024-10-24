@@ -149,3 +149,7 @@ For any questions or support, reach out via email or create an issue on the GitH
 ### TODO DOC
 - expo
 - react-native-navigation
+- react-native-paper
+
+- expo-fonts
+- i18next
