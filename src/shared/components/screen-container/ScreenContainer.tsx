@@ -6,6 +6,7 @@ import {
   View,
   ViewStyle,
 } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 type ScreenContainerProps = {
   children: ReactNode;
@@ -19,9 +20,11 @@ export const ScreenContainer = ({
   style,
 }: ScreenContainerProps) => {
   return scrollView ? (
-    <ScrollView style={[styles.container, style]}>{children}</ScrollView>
+    <SafeAreaView style={styles.container}>
+      <ScrollView contentContainerStyle={style}>{children}</ScrollView>
+    </SafeAreaView>
   ) : (
-    <View style={[styles.container, style]}>{children}</View>
+    <SafeAreaView style={(styles.container, style)}>{children}</SafeAreaView>
   );
 };
 
