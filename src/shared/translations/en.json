@@ -1,4 +1,7 @@
 {
+    "common": {
+        "searchHint": "Search videos"
+    },
     "signIn": {
         "title": "YouTube",
         "subtitle": "LEARN",
@@ -12,5 +15,8 @@
     "bottomBar": {
         "home": "Home",
         "search": "Search"
+    },
+    "home": {
+        "showMore": "Show more"
     }
 }
