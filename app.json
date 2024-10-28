@@ -4,10 +4,10 @@
     "slug": "code-tube-slug",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/icon.png",
+    "icon": "./src/shared/assets/images/app-icon.png",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/images/splash.png",
+      "image": "./src/shared/assets/images/splash.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
@@ -16,13 +16,9 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
       "package": "com.kris2236.codetube"
-    },
-    "web": {
-      "favicon": "./assets/images/favicon.png"
     },
     "build": {
       "development": {
