@@ -72,9 +72,6 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: "bold",
   },
-  showMore: {
-    color: "blue",
-  },
   loader: {
     marginVertical: 20,
   },
@@ -86,7 +83,7 @@ const styles = StyleSheet.create({
   },
   divider: {
     height: 2,
-    backgroundColor: "#000",
+    backgroundColor: "#2B2D42",
     marginLeft: -24,
   },
 });

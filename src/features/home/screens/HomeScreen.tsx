@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { ScreenContainer } from "@shared/components";
-import { StyleSheet, View } from "react-native";
+import { ScreenContainer, TextInput } from "@shared/components";
+import { StyleSheet, TouchableOpacity, View } from "react-native";
 import { useAuthStatus } from "@shared/hooks";
-import { IconButton, TextInput, TouchableRipple } from "react-native-paper";
+import { IconButton } from "react-native-paper";
 import { Ionicons } from "@expo/vector-icons";
 import {
   CompositeNavigationProp,
@@ -20,8 +20,6 @@ type HomeScreenNavigationProp = CompositeNavigationProp<
   BottomTabNavigationProp<BottomTabNavigatorParams, BottomTabs.Home>,
   NativeStackNavigationProp<any>
 >;
-
-// type VideoType = "React Native" | "React" | "Typescript" | "JavaScript";
 
 export const HomeScreen = () => {
   const { t } = useTranslation();
@@ -60,25 +58,22 @@ export const HomeScreen = () => {
   return (
     <ScreenContainer scrollView>
       <View style={styles.searchContainer}>
-        <TouchableRipple onPress={onSearchPress} style={styles.search}>
-          <TextInput
-            placeholder={t("home.searchHint")}
-            disabled
-            style={styles.searchInput}
-          />
-        </TouchableRipple>
+        <TouchableOpacity onPress={onSearchPress} style={styles.search}>
+          <TextInput value="" />
+        </TouchableOpacity>
         <IconButton
           onPress={onLogoutPress}
-          icon={() => <Ionicons name="menu" size={32} />}
+          icon={() => <Ionicons name="settings-outline" size={32} />}
         />
       </View>
       {Object.keys(videos).map((category) => (
         <VideoSection
+          key={category}
           title={category}
           videos={videos[category]}
           onShowMore={() => handleShowMore(category)}
           onVideoPress={handleVideoPress}
-          showDivider={category != categories[categories.length - 1]}
+          showDivider={category !== categories[categories.length - 1]}
         />
       ))}
     </ScreenContainer>
@@ -88,15 +83,12 @@ export const HomeScreen = () => {
 const styles = StyleSheet.create({
   searchContainer: {
     margin: 24,
+    marginRight: 0,
     paddingTop: 16,
     flexDirection: "row",
     alignItems: "center",
   },
   search: {
     flex: 1,
-  },
-  searchInput: {
-    flex: 1,
-    marginRight: 8,
   },
 });
