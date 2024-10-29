@@ -5,10 +5,12 @@ export enum AuthScreens {
 export enum HomeScreens {
   Home = "Home",
   Settings = "Settings",
+  VideoPlayer = "VideoPlayer",
 }
 
 export enum SearchScreens {
   SearchVideo = "SearchVideo",
+  VideoPlayer = "VideoPlayer",
 }
 
 export const Screens = {
