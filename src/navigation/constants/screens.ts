@@ -4,6 +4,7 @@ export enum AuthScreens {
 
 export enum HomeScreens {
   Home = "Home",
+  Settings = "Settings",
 }
 
 export enum SearchScreens {

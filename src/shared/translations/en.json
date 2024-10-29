@@ -12,11 +12,16 @@
         "termsAndConditionsConjunction": " and ",
         "privacyPolicyLink": "Privacy Policy"
     },
+    "home": {
+        "showMore": "Show more"
+    },
+    "settings": {
+        "reminderTitle": "Learning reminders",
+        "reminderFrequency": "Repeat everyday at:",
+        "reminderMessage": "You will receive a friendly reminder to remember to study",
+    },
     "bottomBar": {
         "home": "Home",
         "search": "Search"
-    },
-    "home": {
-        "showMore": "Show more"
     }
 }
