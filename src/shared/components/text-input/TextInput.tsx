@@ -38,9 +38,10 @@ export const TextInput = ({
         outlineColor="#2B2D42"
         outlineStyle={styles.outlineStyle}
       />
-      {resultCount && value && (
+      {!!resultCount && value && (
         <Text style={styles.resultText}>
-          {t("common.resultCount", { count: resultCount, query: value })}
+          {t("common.resultCount", { count: resultCount })}
+          <Text style={styles.resultTextBold}>{`"${value}"`}</Text>
         </Text>
       )}
     </>
@@ -58,8 +59,16 @@ const styles = StyleSheet.create({
     backgroundColor: "#FFF",
   },
   resultText: {
-    fontSize: 12,
+    marginLeft: 24,
+    fontSize: 10,
     color: "#2B2D42",
+    marginBottom: 4,
+  },
+  resultTextBold: {
+    marginLeft: 24,
+    fontSize: 10,
+    color: "#2B2D42",
+    fontWeight: "bold",
     marginBottom: 4,
   },
 });

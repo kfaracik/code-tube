@@ -1,1 +1,1 @@
-export { sortOptions } from "./sortOptions";
+export { getSortOptions, SortOptions, sortVideosBy } from "./sortVideos";
