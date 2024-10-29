@@ -16,6 +16,7 @@ export type AuthNavigatorParams = {
 
 export type HomeNavigatorParams = {
   [HomeScreens.Home]: undefined;
+  [HomeScreens.Settings]: undefined;
 };
 
 export type SearchNavigatorParams = {

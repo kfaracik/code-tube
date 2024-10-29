@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { ScreenContainer, TextInput } from "@shared/components";
 import { StyleSheet, TouchableOpacity, View } from "react-native";
-import { useAuthStatus } from "@shared/hooks";
 import { IconButton } from "react-native-paper";
 import { Ionicons } from "@expo/vector-icons";
 import {
@@ -12,7 +11,7 @@ import { BottomTabNavigationProp } from "@react-navigation/bottom-tabs";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { fetchVideosForCategory, Video } from "@shared/api";
 import { VideoSection } from "../components";
-import { BottomTabs } from "@navigation/constants";
+import { BottomTabs, Screens } from "@navigation/constants";
 import type { BottomTabNavigatorParams } from "@navigation/types";
 import { useTranslation } from "react-i18next";
 
@@ -23,7 +22,6 @@ type HomeScreenNavigationProp = CompositeNavigationProp<
 
 export const HomeScreen = () => {
   const { t } = useTranslation();
-  const { logout } = useAuthStatus();
   const navigation = useNavigation<HomeScreenNavigationProp>();
   const categories = ["React Native", "React", "Javascript", "Typescript"];
   const [videos, setVideos] = useState<{ [key: string]: Video[] }>({});
@@ -52,7 +50,7 @@ export const HomeScreen = () => {
   };
 
   const onLogoutPress = () => {
-    logout();
+    navigation.navigate(Screens.Settings);
   };
 
   return (
