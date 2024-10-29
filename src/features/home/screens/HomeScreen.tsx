@@ -9,7 +9,7 @@ import {
 } from "@react-navigation/native";
 import { BottomTabNavigationProp } from "@react-navigation/bottom-tabs";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
-import { fetchVideosForCategory, Video } from "@shared/api";
+import { fetchVideos, Video } from "@shared/api";
 import { VideoSection } from "../components";
 import { BottomTabs, Screens } from "@navigation/constants";
 import type { BottomTabNavigatorParams } from "@navigation/types";
@@ -28,7 +28,7 @@ export const HomeScreen = () => {
 
   useEffect(() => {
     categories.forEach(async (category) => {
-      const data = await fetchVideosForCategory(category);
+      const data = await fetchVideos(category);
       setVideos((prevVideos) => ({
         ...prevVideos,
         [category]: data,
@@ -37,8 +37,7 @@ export const HomeScreen = () => {
   }, []);
 
   const handleShowMore = (category: string) => {
-    // navigation.navigate(Screens.SearchVideo, { query: category });
-    navigation.jumpTo(BottomTabs.Search);
+    navigation.navigate(Screens.SearchVideo, { query: category });
   };
 
   const handleVideoPress = (video: Video) => {

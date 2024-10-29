@@ -16,6 +16,7 @@
       "@shared/hooks": ["shared/hooks/index.ts"],
       "@shared/api": ["shared/api/index.ts"],
       "@shared/assets/*": ["shared/assets/*"],
+      "@shared/utils": ["shared/utils/index.ts"],
       "@lib/i18n": ["lib/i18n/index.ts"],
       "@lib/zustand": ["lib/zustand/index.ts"],
     }

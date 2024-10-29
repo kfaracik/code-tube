@@ -1,2 +1,2 @@
 export { Video } from "./youtubeApiTypes";
-export { fetchVideosForCategory } from "./youtubeApi";
+export { fetchVideos } from "./youtubeApi";

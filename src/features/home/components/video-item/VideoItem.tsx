@@ -1,7 +1,7 @@
 import React from "react";
 import { Text, Image, TouchableOpacity, StyleSheet } from "react-native";
 import { Video } from "@shared/api";
-import dayjs from "dayjs";
+import { formattedDate } from "@shared/utils";
 
 interface VideoItemProps {
   title: Video["snippet"]["title"];
@@ -16,15 +16,13 @@ export const VideoItem = ({
   publishTime,
   onPress,
 }: VideoItemProps) => {
-  const formattedDate = dayjs(publishTime).format("DD.MM.YYYY");
-
   return (
     <TouchableOpacity style={styles.container} onPress={onPress}>
       <Image source={{ uri: thumbnailsUrl }} style={styles.thumbnail} />
       <Text style={styles.title} numberOfLines={2} ellipsizeMode="tail">
         {title}
       </Text>
-      <Text style={styles.date}>{formattedDate}</Text>
+      <Text style={styles.date}>{formattedDate(publishTime)}</Text>
     </TouchableOpacity>
   );
 };

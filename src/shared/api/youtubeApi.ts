@@ -1,10 +1,11 @@
 import axios from "axios";
-import { mockVideos, Video } from "./VideoTypes";
+import { mockVideos, Video } from "./youtubeApiTypes";
 
 const YT_API_KEY = process.env.YT_API_KEY;
 
-export const fetchVideosForCategory = async (
-  category: string
+export const fetchVideos = async (
+  query: string,
+  maxResults: number = 5
 ): Promise<Video[]> => {
   try {
     const response = await axios.get(
@@ -12,16 +13,16 @@ export const fetchVideosForCategory = async (
       {
         params: {
           key: YT_API_KEY,
-          q: category,
+          q: query,
           part: "snippet",
           type: "video",
-          maxResults: 5,
+          maxResults,
         },
       }
     );
     return response.data.items;
   } catch (error) {
-    console.error(`Error fetching videos for category ${category}:`, error);
+    console.error(`Error fetching videos for ${query}:`, error);
     return [];
   }
 };

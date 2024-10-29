@@ -1,6 +1,8 @@
 {
     "common": {
-        "searchHint": "Search videos"
+        "searchHint": "Search videos",
+        "resultCount": "{{count}} results found for: ",
+        "noResults": "No results found"
     },
     "signIn": {
         "title": "YouTube",
@@ -19,6 +21,14 @@
         "reminderTitle": "Learning reminders",
         "reminderFrequency": "Repeat everyday at:",
         "reminderMessage": "You will receive a friendly reminder to remember to study",
+    },
+    "search": {
+        "title": "Sort records by:",
+        "latest": "Upload date: latest",
+        "oldest": "Upload date: oldest",
+        "popular": "Most popular",
+        "label": "Sort by: ",
+        "confirm": "Confirm"
     },
     "bottomBar": {
         "home": "Home",
