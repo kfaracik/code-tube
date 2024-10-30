@@ -5,20 +5,19 @@ import { Text } from "react-native-paper";
 import { Button, Link, ScreenContainer } from "@shared/components";
 import appImage from "@shared/assets/images/app-icon/app-icon.webp";
 import { links } from "@shared/constants";
-import { useAuthStatus } from "@shared/hooks";
+import { authStore } from "shared/store";
+import { useAuth } from "@shared/hooks";
 
 export const SignInScreen = () => {
   const { t } = useTranslation();
-  const { login } = useAuthStatus();
+  const { login } = useAuth();
 
-  const onLogInAsGuestPress = () => {
+  const onLogInAsGuestPress = async () => {
     login();
   };
 
   const onOpenLink = (link: string) => {
-    Linking.openURL(link).catch((err) =>
-      alert("Couldn't load page")
-    );
+    Linking.openURL(link).catch((err) => alert("Couldn't load page"));
   };
 
   const onTermsAndConditionsPress = () => {

@@ -1,1 +1,1 @@
-export { useAuthStatus } from "./useAuthStatus";
+export { useAuth } from "./useAuth";
