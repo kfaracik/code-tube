@@ -23,8 +23,8 @@
    - Displays four main video categories: **JavaScript**, **TypeScript**, **React**, and **React Native**.
    - Each category is scrollable horizontally and includes a "Show more" button to explore more content in that category.
    - A search bar at the top allows users to search for videos, redirecting to the Search screen.
-2. **Search Screen (Video Finder)**:
 
+2. **Search Screen (Video Finder)**:
    - Allows users to search for videos based on specific keywords using YouTube’s API.
    - Displays a list of videos matching the search query.
 
@@ -66,14 +66,10 @@ To run this project locally, follow these steps:
 
    ```bash
    npm install -g expo-cli
-      expo start
-   ```
-   ```bash
-   expo start
    ```
 
+5. Start the development server:
 
-4. Start the development server:
    ```bash
    npx expo run:android --variant debug
    ```
@@ -81,12 +77,10 @@ To run this project locally, follow these steps:
 ## Usage
 
 1. **Home Screen (Tech Streams)**:
-
    - On launch, you will see the Dashboard with four categories: **JavaScript**, **TypeScript**, **React**, and **React Native**.
    - Scroll horizontally through the lists or use the **Show more** button to view more videos.
 
 2. **Search Screen (Video Finder)**:
-
    - Access the search bar to look for videos by keyword.
    - The search results will be listed with options to sort by date or popularity (if sorting is enabled).
 
@@ -100,9 +94,10 @@ The app integrates with the **YouTube Data API v3** to retrieve video data. To u
 
 1. **Register on Google Cloud**:
    - Follow [this guide](https://developers.google.com/youtube/v3/getting-started) to create a project and get an API key.
-2. **Update API Key**:
 
+2. **Update API Key**:
    - Add your API key in the `.env` file of your project:
+
      ```env
      YOUTUBE_API_KEY=your_api_key_here
      ```
@@ -110,15 +105,17 @@ The app integrates with the **YouTube Data API v3** to retrieve video data. To u
 3. **API Documentation**:
    - YouTube Data API reference: [YouTube API Docs](https://developers.google.com/youtube/v3/docs).
 
+### Mock API for Local Testing
+
+For easier local testing of features without hitting the YouTube API, a mock API is available in the `feature/mock-api` branch. This mock API simulates responses from the YouTube Data API, allowing you to test the app's functionality without the need for an actual API key or internet connection.
+
 ## Optional Features
 
 1. **Sorting**:
-
    - Sort search results by latest, oldest, or most popular videos.
    - This can be implemented in the `SearchScreen` by adding sorting options in the UI.
 
 2. **Notifications**:
-
    - Add a settings screen to allow users to enable/disable daily push notifications and set the time. (not supported)
 
 3. **Notes**:
