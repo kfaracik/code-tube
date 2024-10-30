@@ -1,15 +1,14 @@
 import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { BottomTabNavigator, AuthNavigator } from "../navigators";
-import { useAuthStatus } from "@shared/hooks";
+import { useAuth } from "@shared/hooks";
 
 export const AppContent = () => {
-  const { isSigned } = useAuthStatus();
-
+  const { isLoggedIn } = useAuth();
 
   return (
     <NavigationContainer>
-      {isSigned ? <BottomTabNavigator /> : <AuthNavigator />}
+      {isLoggedIn ? <BottomTabNavigator /> : <AuthNavigator />}
     </NavigationContainer>
   );
 };
