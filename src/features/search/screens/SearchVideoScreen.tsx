@@ -65,9 +65,12 @@ export const SearchVideoScreen = ({
           style={styles.input}
         />
         <TextButton mode="text" style={styles.sortButton} onPress={openModal}>
-          {t("search.label", {
-            option: sortOptions.find((opt) => opt.key === sortOption)?.label,
-          })}
+          <Text style={styles.text}>
+            {t("search.label")}
+            <Text style={styles.textBold}>
+              {sortOptions.find((opt) => opt.key === sortOption)?.label}
+            </Text>
+          </Text>
         </TextButton>
         <View style={styles.listWrapper}>
           <FlashList
@@ -130,5 +133,15 @@ const styles = StyleSheet.create({
   },
   separator: {
     height: 24,
+  },
+  text: {
+    marginTop: 2,
+    fontSize: 12,
+    color: "#2B2D42",
+  },
+  textBold: {
+    fontSize: 12,
+    fontWeight: "bold",
+    color: "#2B2D42",
   },
 });

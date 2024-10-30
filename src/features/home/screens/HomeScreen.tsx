@@ -41,7 +41,7 @@ export const HomeScreen = () => {
   };
 
   const handleVideoPress = (video: Video) => {
-    // navigation.navigate("VideoPlayer", { video });
+    navigation.navigate(Screens.VideoPlayer, { video });
   };
 
   const onSearchPress = () => {

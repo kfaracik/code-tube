@@ -4,6 +4,7 @@ import type {
   SearchScreens,
   BottomTabs,
 } from "@navigation/constants";
+import { Video } from "@shared/api";
 
 export type BottomTabNavigatorParams = {
   [BottomTabs.Home]: undefined;
@@ -17,8 +18,10 @@ export type AuthNavigatorParams = {
 export type HomeNavigatorParams = {
   [HomeScreens.Home]: undefined;
   [HomeScreens.Settings]: undefined;
+  [HomeScreens.VideoPlayer]: { video: Video };
 };
 
 export type SearchNavigatorParams = {
-  [SearchScreens.SearchVideo]: undefined;
+  [SearchScreens.SearchVideo]: { query?: string };
+  [SearchScreens.VideoPlayer]: { video?: Video };
 };

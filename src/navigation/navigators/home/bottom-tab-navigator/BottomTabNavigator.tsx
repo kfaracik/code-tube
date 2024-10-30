@@ -16,7 +16,7 @@ import {
 const { Navigator, Screen } =
   createBottomTabNavigator<BottomTabNavigatorParams>();
 
-const HIDDEN_BOTTOM_TABS = [Screens.Settings];
+const HIDDEN_BOTTOM_TABS = [Screens.Settings, Screens.VideoPlayer];
 type HiddenBottomTabScreensType = (typeof HIDDEN_BOTTOM_TABS)[number];
 
 const getActiveScreenName = (route: any) => {

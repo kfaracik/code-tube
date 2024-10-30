@@ -30,6 +30,21 @@
         "label": "Sort by: ",
         "confirm": "Confirm"
     },
+    "videoPlayer": {
+        "noData": "No video data",
+        "details": "Details",
+        "notes": "Notes"
+    },
+    "videoDetails": {
+        "description": "Description",
+        "statistics": "Statistics",
+        "views": "views",
+        "likes": "likes"
+    },
+    "notes": {
+        "enterNote": "Enter note",
+        "addNote": "Add Note"
+    },
     "bottomBar": {
         "home": "Home",
         "search": "Search"
