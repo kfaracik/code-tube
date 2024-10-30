@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View, Keyboard } from "react-native";
 import {
   ActivityIndicator,
   Button as TextButton,
@@ -11,37 +11,49 @@ import { useTranslation } from "react-i18next";
 import { SearchVideoItem, SortModal } from "../components";
 import { fetchVideos, Video } from "@shared/api";
 import { getSortOptions, SortOptions, sortVideosBy } from "../utils";
+import { RouteProp, useRoute } from "@react-navigation/native";
+import { SearchNavigatorParams } from "@navigation/types";
+import { SearchScreens } from "@navigation/constants";
 
-type SearchVideoScreenProps = {
-  query?: string;
-};
+type SearchVideoScreenRouteProp = RouteProp<
+  SearchNavigatorParams,
+  SearchScreens.SearchVideo
+>;
 
-export const SearchVideoScreen = ({
-  query: queryProp,
-}: SearchVideoScreenProps) => {
+export const SearchVideoScreen = () => {
   const { t } = useTranslation();
-  const [query, setQuery] = useState(queryProp ?? "");
+  const route = useRoute<SearchVideoScreenRouteProp>();
+  const [query, setQuery] = useState(route.params?.query ?? "");
   const [videos, setVideos] = useState<Video[]>([]);
   const [loading, setLoading] = useState(false);
   const [sortOption, setSortOption] = useState<SortOptions>(
     SortOptions.POPULAR
   );
+  const [tempSortOption, setTempSortOption] = useState<SortOptions>(
+    SortOptions.POPULAR
+  );
   const [modalVisible, setModalVisible] = useState(false);
   const [resultCount, setResultCount] = useState(10);
 
-  // TODO: handle flash list load more
-
   useEffect(() => {
     const fetchData = async () => {
+      setLoading(true);
       const data = await fetchVideos(query);
       setVideos(data);
+      setLoading(false);
     };
 
     fetchData();
   }, [query]);
 
-  const sortVideos = (option: SortOptions) => {
-    const sortedVideos = sortVideosBy(videos, option);
+  useEffect(() => {
+    if (route.params?.query) {
+      setQuery(route.params.query);
+    }
+  }, [route.params?.query]);
+
+  const sortVideos = () => {
+    const sortedVideos = sortVideosBy(videos, tempSortOption);
     setVideos(sortedVideos);
   };
 
@@ -51,6 +63,8 @@ export const SearchVideoScreen = ({
 
   const closeModal = () => {
     setModalVisible(false);
+    setSortOption(tempSortOption);
+    sortVideos();
   };
 
   const sortOptions = getSortOptions();
@@ -98,11 +112,8 @@ export const SearchVideoScreen = ({
         <SortModal
           visible={modalVisible}
           onDismiss={closeModal}
-          sortOption={sortOption}
-          onSortConfirm={(option) => {
-            setSortOption(option);
-            sortVideos(option);
-          }}
+          sortOption={tempSortOption}
+          onSortConfirm={(option) => setTempSortOption(option)}
         />
       </ScreenContainer>
     </PaperProvider>
