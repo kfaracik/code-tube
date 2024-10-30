@@ -1,1 +1,1 @@
-export { VideoPlayerScreen } from "./VideoPlayer";
+export { VideoPlayerScreen } from "./VideoPlayerScreen";

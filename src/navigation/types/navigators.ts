@@ -23,5 +23,5 @@ export type HomeNavigatorParams = {
 
 export type SearchNavigatorParams = {
   [SearchScreens.SearchVideo]: { query?: string };
-  [SearchScreens.VideoPlayer]: { video: Video };
+  [SearchScreens.VideoPlayer]: { video?: Video };
 };

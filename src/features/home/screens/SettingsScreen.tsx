@@ -27,12 +27,10 @@ export const SettingsScreen = () => {
         <Text style={styles.userName}>{userName}</Text>
       </View>
       <Divider style={styles.divider} />
-
       <View style={styles.titleContainer}>
         <Ionicons name="notifications-outline" size={20} color="#2B2D42" />
         <Text style={styles.title}>{t("settings.reminderTitle")}</Text>
       </View>
-
       <View style={styles.switchContainer}>
         <Text style={styles.reminderText}>
           {t("settings.reminderFrequency")}
