@@ -56,7 +56,7 @@ export const SearchVideoScreen = ({
   const sortOptions = getSortOptions();
 
   return (
-    <PaperProvider >
+    <PaperProvider>
       <ScreenContainer style={styles.container}>
         <TextInput
           value={query}
@@ -137,11 +137,11 @@ const styles = StyleSheet.create({
   text: {
     marginTop: 2,
     fontSize: 12,
-    color: '#2B2D42'
+    color: "#2B2D42",
   },
   textBold: {
     fontSize: 12,
     fontWeight: "bold",
-    color: '#2B2D42'
+    color: "#2B2D42",
   },
 });
