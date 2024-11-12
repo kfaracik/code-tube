@@ -4,6 +4,12 @@
 
 **Code Tube** is a mobile video application built with **React Native** using **Expo**, designed to serve as a knowledge hub for Junior React Native Developers. This app fetches video resources from YouTube’s API, providing a categorized view of content related to **JavaScript**, **TypeScript**, **React**, and **React Native**. The app includes essential features like video search, video details, and optional functionalities such as sorting, notifications, and note-taking.
 
+![Demo aplikacji](https://media.giphy.com/media/Fsg26nTd1dAP2T9qAE/giphy.gif)
+![Video player](https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExZWxlcXc1N3BlemR1dXZyd3N0cXdsYnYzdDYxeTMzcjdzMjJpdDJtYyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/qqp4WfSG8e4xHH1e95/giphy.gif)
+![Sorting results](https://media.giphy.com/media/TdpY2XZSq0SXRtZXr2/giphy.gif)
+![Notification](https://media.giphy.com/media/uT80hcLVd0nQcjxo5t/giphy.gif)
+
+
 ## Table of Contents
 
 - [Features](#features)
